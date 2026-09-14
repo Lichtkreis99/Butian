@@ -1,0 +1,2515 @@
+:root {
+  color: #e7e0d2;
+  background: #05080d;
+  font-family: "PingFang SC", "Hiragino Sans GB", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-synthesis: none;
+  --ink: #e7e0d2;
+  --muted: #8c9399;
+  --faint: #59626a;
+  --night: #05080d;
+  --panel: rgba(10, 16, 23, 0.92);
+  --line: rgba(208, 180, 128, 0.17);
+  --gold: #d0a758;
+  --gold-light: #e6c37b;
+  --cinnabar: #bd4b3e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app,
+.app-shell {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+button,
+input,
+select {
+  color: inherit;
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-rows: 70px minmax(0, 1fr);
+  background:
+    radial-gradient(circle at 26% 48%, rgba(39, 54, 73, 0.14), transparent 44%),
+    var(--night);
+}
+
+.time-bar {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  min-width: 0;
+  padding: 9px 18px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(5, 9, 14, 0.96);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.24);
+}
+
+.mode-switch {
+  display: flex;
+  margin-left: auto;
+  padding: 2px;
+  border: 1px solid rgba(208, 180, 128, 0.2);
+  background: #091019;
+}
+
+.settings-button {
+  flex: 0 0 auto;
+  font-size: 17px;
+}
+
+.settings-panel {
+  position: fixed;
+  z-index: 90;
+  top: 70px;
+  right: 0;
+  bottom: 0;
+  width: min(390px, 94vw);
+  border-left: 1px solid rgba(208, 180, 128, 0.25);
+  background: rgba(8, 14, 21, 0.98);
+  box-shadow: -24px 0 60px rgba(0, 0, 0, 0.48);
+  transform: translateX(102%);
+  transition: transform 220ms ease;
+}
+
+.settings-panel.is-open {
+  transform: translateX(0);
+}
+
+.settings-panel header {
+  position: relative;
+  padding: 22px 24px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.settings-panel h2 {
+  margin: 5px 0 0;
+  font-family: "Songti SC", serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.settings-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  color: var(--muted);
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.settings-scroll {
+  display: grid;
+  max-height: calc(100% - 132px);
+  gap: 13px;
+  padding: 18px 24px;
+  overflow-y: auto;
+}
+
+.settings-scroll > label:not(.setting-check),
+.settings-panel fieldset label:not(.setting-check) {
+  display: grid;
+  gap: 6px;
+  color: #92999d;
+  font-size: 11px;
+}
+
+.settings-panel select {
+  height: 31px;
+  border: 1px solid var(--line);
+  background: #0b1219;
+}
+
+.settings-panel fieldset {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 13px;
+  border: 1px solid var(--line);
+}
+
+.settings-panel legend {
+  padding: 0 5px;
+  color: var(--gold);
+  font-family: "Songti SC", serif;
+  font-size: 12px;
+}
+
+.setting-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #aeb3b3;
+  font-size: 11px;
+}
+
+.settings-panel footer {
+  position: absolute;
+  right: 24px;
+  bottom: 18px;
+}
+
+.observation-card {
+  display: grid;
+  min-height: 100%;
+  place-content: center;
+  justify-items: center;
+  padding: 36px;
+  text-align: center;
+}
+
+.observation-card h2 {
+  font-family: "Songti SC", serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.observation-card p {
+  max-width: 290px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.mode-switch button {
+  padding: 7px 11px;
+  color: #7f898f;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mode-switch button.is-active {
+  color: #f1dfbd;
+  background: rgba(189, 75, 62, 0.3);
+}
+
+.sphere-controls {
+  position: absolute;
+  z-index: 16;
+  top: 88px;
+  right: 16px;
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 440px;
+  gap: 8px 12px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  color: #aeb5b7;
+  background: rgba(7, 13, 19, 0.86);
+  font-size: 10px;
+}
+
+.sphere-controls.is-visible {
+  display: flex;
+}
+
+.planetarium-toolbar {
+  position: absolute;
+  z-index: 18;
+  right: 50%;
+  bottom: 18px;
+  display: none;
+  align-items: center;
+  gap: 3px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  background: rgba(6, 11, 17, 0.9);
+  transform: translateX(50%);
+}
+
+.scene-host.is-planetarium .planetarium-toolbar,
+.sky-viewport[data-sky-mode="huntian"] .planetarium-toolbar {
+  display: flex;
+}
+
+.planetarium-toolbar button {
+  width: 29px;
+  height: 27px;
+  color: #7f8a90;
+  background: transparent;
+  cursor: pointer;
+}
+
+.planetarium-toolbar button.is-active {
+  color: #f0d59c;
+  background: rgba(189, 75, 62, 0.25);
+}
+
+.planetarium-toolbar button:disabled {
+  opacity: 0.28;
+  cursor: not-allowed;
+}
+
+.planetarium-toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 4px;
+  color: #8f989c;
+  font-size: 9px;
+}
+
+.planetarium-toolbar select {
+  max-width: 82px;
+  border: 1px solid var(--line);
+  background: #0a1118;
+  font-size: 10px;
+}
+
+.sphere-controls label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sphere-controls select {
+  border: 1px solid var(--line);
+  background: #0a1118;
+}
+
+.asterism-labels {
+  position: absolute;
+  z-index: 9;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.body-labels,
+.star-labels {
+  position: absolute;
+  z-index: 10;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.body-labels span,
+.star-labels span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1px 4px;
+  border-left: 1px solid rgba(214, 177, 104, 0.45);
+  color: rgba(225, 220, 204, 0.82);
+  background: rgba(5, 8, 13, 0.48);
+  font-family: "Songti SC", serif;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.planetarium-overlay {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  display: none;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.planetarium-overlay.is-visible {
+  display: block;
+}
+
+.planetarium-overlay svg,
+.atmosphere-sky {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.atmosphere-sky {
+  background: linear-gradient(#31506b, #8b735e 68%, #c18767);
+  mix-blend-mode: screen;
+}
+
+.planetarium-ground {
+  fill: rgba(5, 13, 16, 0.98);
+  stroke: rgba(191, 168, 124, 0.72);
+  stroke-width: 1;
+}
+
+.planetarium-overlay svg {
+  background: linear-gradient(to top, rgba(8, 17, 20, 0.94), transparent 48%);
+  overflow: hidden;
+}
+
+.planetarium-grid path {
+  fill: none;
+  stroke: rgba(151, 176, 180, 0.27);
+  stroke-width: 0.7;
+}
+
+.planetarium-grid .ecliptic {
+  stroke: rgba(205, 102, 72, 0.72);
+}
+
+.planetarium-grid .equatorial {
+  stroke: rgba(112, 151, 177, 0.38);
+}
+
+.planetarium-grid .below-horizon {
+  opacity: 0.4;
+}
+
+.planetarium-grid .horizon {
+  opacity: 1;
+  stroke: rgba(220, 190, 125, 0.72);
+  stroke-width: 1;
+}
+
+.planetarium-grid .meridian {
+  stroke: rgba(220, 190, 125, 0.62);
+}
+
+.cardinal-marks text {
+  fill: #e5c98e;
+  font-family: "Songti SC", serif;
+  font-size: 11px;
+  text-anchor: middle;
+}
+
+.planetarium-guides circle {
+  fill: #bc5548;
+  stroke: #f0d091;
+  stroke-width: 0.7;
+}
+
+.planetarium-guides text {
+  fill: #f0d091;
+  font-size: 9px;
+}
+
+.planetarium-guides .cusp-mark {
+  fill: #d6bd82;
+  stroke: none;
+}
+
+.planetarium-guides .mansion-tick circle {
+  fill: #c76151;
+  stroke: none;
+}
+
+.planetarium-guides .sky-highlight {
+  fill: none;
+  stroke: #ffd588;
+  stroke-width: 1.5;
+}
+
+.is-planetarium .view-presets,
+.is-planetarium .control-hint {
+  display: none;
+}
+
+.star-labels span {
+  border-left: 0;
+  color: rgba(206, 211, 207, 0.66);
+  background: rgba(5, 8, 13, 0.35);
+  font-size: 9px;
+}
+
+.body-labels span.is-selected {
+  color: #fff0c7;
+  border-color: var(--cinnabar);
+}
+
+.asterism-labels button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1px 3px;
+  color: rgba(215, 217, 207, 0.68);
+  background: rgba(5, 8, 13, 0.45);
+  font-family: "Songti SC", serif;
+  font-size: 10px;
+  white-space: nowrap;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 180ms;
+}
+
+.asterism-labels [data-layer="mansions"] { color: #df806c; }
+.asterism-labels [data-layer="enclosures"] { color: #e1bd72; }
+.asterism-labels button.is-faded { opacity: 0.08; pointer-events: none; }
+.asterism-labels button.is-selected { color: #fff1c8; outline: 1px solid #bd4b3e; }
+
+.star-labels span,
+.asterism-labels button,
+.body-labels span {
+  transition: opacity 180ms ease;
+}
+
+.gaitian-card {
+  display: grid;
+  min-height: 100%;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  padding: 16px;
+  color: #aeb5b7;
+  background: radial-gradient(circle, rgba(25, 39, 50, 0.72), rgba(5, 9, 14, 0.96));
+}
+
+.gaitian-card header,
+.gaitian-card footer {
+  display: flex;
+  justify-content: space-between;
+  color: #7f898f;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.gaitian-card header strong {
+  color: #c9b58c;
+  font-weight: 400;
+}
+
+.gaitian-card footer {
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.gaitian-svg {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+}
+
+.gaitian-field {
+  fill: rgba(7, 13, 20, 0.78);
+  stroke: rgba(208, 180, 128, 0.28);
+}
+
+.gaitian-rules circle {
+  fill: none;
+  stroke: rgba(189, 205, 210, 0.24);
+  stroke-width: 0.7;
+}
+
+.gaitian-rules .gaitian-ecliptic {
+  stroke: rgba(199, 90, 67, 0.62);
+  stroke-dasharray: 3 2;
+}
+
+.gaitian-rule-labels text,
+.gaitian-spokes text,
+.gaitian-asterism text {
+  fill: #9ba5a8;
+  font-family: "Songti SC", serif;
+  font-size: 7px;
+  text-anchor: middle;
+}
+
+.gaitian-spokes line {
+  stroke: rgba(199, 90, 67, 0.2);
+  stroke-width: 0.55;
+}
+
+.gaitian-asterism {
+  cursor: pointer;
+}
+
+.gaitian-asterism line {
+  stroke: rgba(174, 183, 186, 0.42);
+  stroke-width: 0.7;
+}
+
+.gaitian-asterism circle {
+  fill: #d7dcda;
+}
+
+.gaitian-mansion line,
+.gaitian-mansion circle {
+  stroke: #bf5d4a;
+  fill: #d9816d;
+}
+
+.gaitian-enclosure line,
+.gaitian-enclosure circle {
+  stroke: #d0a758;
+  fill: #d8ba78;
+}
+
+.gaitian-asterism.is-linked line,
+.gaitian-asterism.is-linked circle,
+.gaitian-asterism:hover line,
+.gaitian-asterism:hover circle {
+  stroke: #ffe0a1;
+  fill: #ffe0a1;
+  stroke-width: 1.5;
+}
+
+.gaitian-pole {
+  fill: #ead08e;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 162px;
+}
+
+.brand-seal {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  place-items: center;
+  border: 1px solid #d16a58;
+  color: #edc6a4;
+  background: #7d2925;
+  font-family: "Songti SC", serif;
+  font-size: 23px;
+  box-shadow: inset 0 0 0 3px rgba(5, 9, 14, 0.55);
+}
+
+.brand-lockup strong,
+.brand-lockup small {
+  display: block;
+}
+
+.brand-lockup strong {
+  color: #eee5d4;
+  font-family: "Songti SC", serif;
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+}
+
+.brand-lockup small {
+  margin-top: 2px;
+  color: #737d85;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+}
+
+.time-controls {
+  display: flex;
+  align-items: end;
+  gap: 9px;
+  min-width: 0;
+}
+
+.time-controls label {
+  position: relative;
+  display: grid;
+  gap: 3px;
+  color: #798189;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+.time-controls input,
+.time-controls select {
+  height: 31px;
+  padding: 0 9px;
+  border: 1px solid rgba(213, 187, 135, 0.19);
+  border-radius: 2px;
+  color: #d7d2c9;
+  background: #0a1118;
+  font-size: 11px;
+  letter-spacing: 0;
+}
+
+.date-time {
+  width: 176px;
+}
+
+.time-zone {
+  width: 142px;
+}
+
+.place-search {
+  width: 180px;
+}
+
+.speed-select {
+  width: 108px;
+}
+
+.quiet-button,
+.icon-button {
+  height: 31px;
+  border: 1px solid rgba(214, 177, 104, 0.28);
+  border-radius: 2px;
+  color: #cdbb99;
+  background: rgba(17, 24, 31, 0.9);
+  cursor: pointer;
+}
+
+.quiet-button:hover,
+.icon-button:hover {
+  border-color: rgba(214, 177, 104, 0.65);
+  color: #f0d18f;
+}
+
+.now-button {
+  min-width: 52px;
+}
+
+.icon-button {
+  width: 34px;
+  color: var(--gold-light);
+  font-size: 10px;
+}
+
+.place-results {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  z-index: 50;
+  display: grid;
+  width: 310px;
+  border: 1px solid rgba(208, 173, 103, 0.28);
+  background: #091019;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.55);
+}
+
+.place-results:empty {
+  display: none;
+}
+
+.place-results button {
+  padding: 9px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: #abb0b4;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.place-results button:hover {
+  color: #f1d7a4;
+  background: rgba(189, 75, 62, 0.16);
+}
+
+.accuracy-warning {
+  display: none;
+  margin-left: auto;
+  color: #d27c6c;
+  font-size: 10px;
+}
+
+.accuracy-warning.is-visible {
+  display: inline;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: var(--sky-column-width, minmax(360px, 62fr)) 9px
+    minmax(300px, 38fr);
+  min-height: 0;
+}
+
+.workspace-splitter {
+  position: relative;
+  z-index: 20;
+  min-width: 9px;
+  cursor: col-resize;
+  touch-action: none;
+  background: rgba(8, 13, 19, 0.96);
+}
+
+.workspace-splitter::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 4px;
+  width: 1px;
+  background: rgba(208, 180, 128, 0.2);
+  content: "";
+  transition: background 120ms ease, box-shadow 120ms ease;
+}
+
+.workspace-splitter:hover::after,
+.workspace-splitter:focus-visible::after,
+.workspace-splitter.is-dragging::after {
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(208, 167, 88, 0.55);
+}
+
+.sky-viewport {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-right: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 50% 47%, rgba(20, 30, 44, 0.16), transparent 54%),
+    linear-gradient(#05080d, #070b11);
+}
+
+.sky-viewport::before,
+.sky-viewport::after {
+  position: absolute;
+  z-index: 2;
+  width: 74px;
+  height: 74px;
+  content: "";
+  pointer-events: none;
+}
+
+.sky-viewport::before {
+  top: 16px;
+  left: 16px;
+  border-top: 1px solid rgba(211, 174, 101, 0.31);
+  border-left: 1px solid rgba(211, 174, 101, 0.31);
+}
+
+.sky-viewport::after {
+  right: 16px;
+  bottom: 16px;
+  border-right: 1px solid rgba(211, 174, 101, 0.22);
+  border-bottom: 1px solid rgba(211, 174, 101, 0.22);
+}
+
+.scene-host {
+  position: absolute;
+  inset: 0;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.scene-host canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.viewport-heading {
+  position: absolute;
+  top: 29px;
+  left: 31px;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.section-kicker {
+  display: block;
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+}
+
+.viewport-heading h1 {
+  margin: 8px 0 0;
+  color: rgba(231, 224, 210, 0.72);
+  font-family: "Songti SC", serif;
+  font-size: clamp(17px, 1.45vw, 23px);
+  font-weight: 400;
+  letter-spacing: 0.16em;
+}
+
+.view-presets {
+  position: absolute;
+  top: 95px;
+  left: 30px;
+  z-index: 7;
+  display: grid;
+  gap: 2px;
+}
+
+.view-presets button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 118px;
+  padding: 6px 8px;
+  border-left: 1px solid rgba(213, 176, 105, 0.18);
+  color: #6f7980;
+  background: linear-gradient(90deg, rgba(5, 10, 16, 0.68), transparent);
+  font-size: 10px;
+  text-align: left;
+  cursor: pointer;
+  transition: color 180ms ease, border-color 180ms ease;
+}
+
+.view-presets button span {
+  color: #a44b42;
+  font-family: "Songti SC", serif;
+}
+
+.view-presets button:hover,
+.view-presets button.is-active {
+  border-color: var(--gold);
+  color: #e2d7c5;
+}
+
+.view-presets button.is-active {
+  background: linear-gradient(90deg, rgba(146, 57, 46, 0.23), transparent);
+}
+
+.scene-readout {
+  position: absolute;
+  right: 28px;
+  bottom: 27px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #69747d;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+}
+
+.scene-readout i {
+  width: 28px;
+  height: 1px;
+  background: rgba(205, 171, 102, 0.3);
+}
+
+.live-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #b55045;
+  box-shadow: 0 0 8px #b55045;
+}
+
+.control-hint {
+  position: absolute;
+  bottom: 23px;
+  left: 30px;
+  z-index: 4;
+  margin: 0;
+  color: #505960;
+  font-size: 9px;
+  pointer-events: none;
+}
+
+.about-button {
+  position: absolute;
+  top: 29px;
+  right: 28px;
+  z-index: 8;
+  height: 27px;
+  padding: 0 10px;
+  font-size: 9px;
+}
+
+.info-panel {
+  position: absolute;
+  top: 88px;
+  right: 22px;
+  z-index: 9;
+  width: min(310px, 34vw);
+  padding: 15px 16px;
+  border-top: 1px solid rgba(206, 165, 91, 0.4);
+  border-right: 1px solid rgba(206, 165, 91, 0.13);
+  background: linear-gradient(135deg, rgba(7, 13, 20, 0.91), rgba(7, 12, 18, 0.62));
+  backdrop-filter: blur(10px);
+  transition: opacity 180ms ease;
+}
+
+.info-panel:not(.has-selection) {
+  opacity: 0.62;
+}
+
+.info-panel h2 {
+  margin: 8px 0 1px;
+  color: #efe4d0;
+  font-family: "Songti SC", serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+}
+
+.object-subtitle,
+.empty-info {
+  color: #737d83;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.object-subtitle {
+  margin: 0 0 12px;
+}
+
+.empty-info {
+  margin: 9px 0 0;
+}
+
+.info-panel dl {
+  margin: 0;
+}
+
+.info-panel dl div {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 10px;
+  padding: 5px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.045);
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.info-panel dt {
+  color: #68737b;
+}
+
+.info-panel dd {
+  margin: 0;
+  color: #bdc0bd;
+  text-align: right;
+}
+
+.info-close {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  color: #747a7e;
+  background: transparent;
+  cursor: pointer;
+}
+
+.info-fly {
+  width: 100%;
+  margin-top: 10px;
+  color: var(--gold-light);
+}
+
+.mansion-tooltip {
+  position: fixed;
+  z-index: 80;
+  display: none;
+  gap: 3px;
+  min-width: 178px;
+  padding: 9px 11px;
+  border: 1px solid rgba(199, 83, 67, 0.55);
+  color: #b8b3aa;
+  background: rgba(7, 12, 18, 0.94);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-size: 9px;
+  pointer-events: none;
+}
+
+.mansion-tooltip.is-visible {
+  display: grid;
+}
+
+.mansion-tooltip strong {
+  color: #e6c6a0;
+  font-family: "Songti SC", serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.chart-panel {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(70, 48, 32, 0.13), transparent 37%),
+    #080d13;
+  transition: width 240ms ease;
+}
+
+.context-visibility-toggle {
+  position: absolute;
+  z-index: 8;
+  top: 52px;
+  right: 42px;
+  color: #9ba2a2;
+  font-size: 10px;
+}
+
+.return-chart-orientation {
+  position: absolute;
+  z-index: 9;
+  top: 51px;
+  left: 34px;
+  height: 24px;
+  padding: 0 8px;
+  border: 1px solid rgba(209, 177, 114, 0.22);
+  color: #a99772;
+  background: rgba(8, 13, 19, 0.9);
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.visibility-controls {
+  container-type: inline-size;
+  display: grid;
+  gap: 14px;
+  padding: 10px;
+  border: 1px solid var(--line);
+}
+
+.visibility-control {
+  display: grid;
+  min-width: 0;
+  gap: 5px;
+  color: #92999d;
+  font-size: 10px;
+}
+
+.visibility-heading {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: 8px;
+}
+
+.visibility-title {
+  white-space: nowrap;
+}
+
+.visibility-controls output {
+  min-width: 0;
+  overflow: hidden;
+  color: #c7b78e;
+  font-size: 9px;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.visibility-slider-row {
+  display: grid;
+  min-width: 0;
+}
+
+.visibility-slider-row > input {
+  width: 100%;
+  min-width: 0;
+}
+
+.visibility-ticks {
+  position: relative;
+  display: block;
+  height: 15px;
+  margin: -3px 6px 0;
+}
+
+.visibility-ticks i {
+  position: absolute;
+  width: 1px;
+  height: 4px;
+  background: #8d7953;
+}
+
+.visibility-ticks b {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  color: #716957;
+  font-size: 7px;
+  font-style: normal;
+  font-weight: 400;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.planet-distance-ticks em {
+  display: none;
+  font-style: normal;
+}
+
+.star-distance-ticks i:first-child b {
+  transform: none;
+}
+
+.star-distance-ticks i:last-child b {
+  transform: translateX(-100%);
+}
+
+.visibility-controls.is-compact {
+  position: absolute;
+  z-index: 17;
+  top: 184px;
+  left: 24px;
+  width: min(310px, calc(100% - 48px));
+  padding: 6px 9px;
+  background: rgba(6, 11, 17, 0.84);
+}
+
+.double-range {
+  position: relative;
+  height: 18px;
+}
+
+.double-range input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.double-range input::-webkit-slider-thumb {
+  pointer-events: auto;
+}
+
+@container (max-width: 480px) {
+  .planet-distance-ticks b span {
+    display: none;
+  }
+
+  .planet-distance-ticks b em {
+    display: inline;
+  }
+}
+
+@container (max-width: 330px) {
+  .visibility-heading {
+    gap: 5px;
+  }
+
+  .visibility-controls output {
+    font-size: 8px;
+  }
+
+  .planet-distance-ticks i:nth-child(even) b {
+    display: none;
+  }
+}
+
+.path-glyph,
+.inline-glyph {
+  fill: none;
+  stroke: var(--gold-light);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.path-glyph {
+  pointer-events: none;
+}
+
+.inline-glyph {
+  width: 17px;
+  height: 17px;
+  vertical-align: -4px;
+}
+
+.chart-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: 48px;
+  border-bottom: 1px solid var(--line);
+}
+
+.chart-tabs button {
+  position: relative;
+  color: #687179;
+  background: transparent;
+  font-family: "Songti SC", serif;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.chart-tabs button + button {
+  border-left: 1px solid rgba(207, 175, 114, 0.09);
+}
+
+.chart-tabs button.is-active {
+  color: #e0c387;
+  background: linear-gradient(rgba(189, 75, 62, 0.12), transparent);
+}
+
+.chart-tabs button.is-active::after {
+  position: absolute;
+  right: 25%;
+  bottom: -1px;
+  left: 25%;
+  height: 1px;
+  background: #bd5648;
+  content: "";
+}
+
+.collapse-chart {
+  position: absolute;
+  top: 58px;
+  left: 0;
+  z-index: 8;
+  width: 24px;
+  height: 46px;
+  border: 1px solid rgba(209, 177, 114, 0.19);
+  border-left: 0;
+  color: #a88c58;
+  background: #0b1117;
+  cursor: pointer;
+}
+
+.chart-inputs {
+  display: flex;
+  height: 42px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  padding: 6px 14px 6px 32px;
+  border-bottom: 1px solid rgba(208, 180, 128, 0.1);
+  background: rgba(5, 9, 14, 0.5);
+}
+
+.chart-inputs label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #687179;
+  font-size: 9px;
+}
+
+.chart-inputs select {
+  height: 26px;
+  padding: 0 20px 0 7px;
+  border: 1px solid rgba(213, 187, 135, 0.18);
+  border-radius: 2px;
+  color: #c9c2b5;
+  background: #0a1118;
+  font-size: 9px;
+}
+
+.chart-text-toggle {
+  display: flex;
+  height: 26px;
+  border: 1px solid rgba(213, 187, 135, 0.18);
+}
+
+.chart-text-toggle button {
+  padding: 0 7px;
+  color: #747d82;
+  background: transparent;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.chart-text-toggle button.is-active {
+  color: #ecd49f;
+  background: rgba(189, 75, 62, 0.25);
+}
+
+.virtual-radius-toggle {
+  height: 26px;
+  padding: 0 8px;
+  border: 1px solid rgba(213, 187, 135, 0.18);
+  color: #777f83;
+  background: transparent;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.virtual-radius-toggle.is-active {
+  border-color: rgba(208, 167, 88, 0.58);
+  color: #efd59a;
+  background: rgba(189, 75, 62, 0.2);
+}
+
+.planet-name,
+.sign-name {
+  fill: #ddd2bd;
+  font-family: "Songti SC", serif;
+  font-size: 9px;
+  text-anchor: middle;
+}
+
+.axis-link text {
+  fill: #e4c478;
+  font-size: 7px;
+  text-anchor: middle;
+}
+
+.sign-name {
+  fill: #c3a970;
+  font-size: 8px;
+}
+
+.chart-content {
+  height: calc(100% - 90px);
+  overflow: auto;
+  scrollbar-color: rgba(208, 167, 88, 0.28) transparent;
+}
+
+.chart-section {
+  width: min(100%, 560px);
+  margin: 0 auto;
+  padding: 20px 22px 40px;
+}
+
+.chart-section > .chart-eyebrow {
+  display: block;
+  color: #7e6442;
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-align: center;
+}
+
+.chart-section > h2 {
+  margin: 5px 0 8px;
+  color: #decba7;
+  font-family: "Songti SC", serif;
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-align: center;
+}
+
+.chart-section > h3 {
+  margin: 24px 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(207, 172, 102, 0.16);
+  color: #c7a86c;
+  font-family: "Songti SC", serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+}
+
+.chart-wheel {
+  display: block;
+  width: min(100%, 440px);
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.chart-wheel circle,
+.chart-wheel line,
+.bazi-columns rect,
+.bazi-columns line {
+  fill: none;
+  stroke: rgba(211, 174, 102, 0.32);
+  stroke-width: 0.8;
+}
+
+.chart-wheel .aspect-line {
+  opacity: 0.46;
+  stroke-width: 0.7;
+}
+
+.aspect-line {
+  cursor: pointer;
+  pointer-events: stroke;
+}
+
+.aspect-link.is-aspect-linked {
+  opacity: 1;
+  filter: drop-shadow(0 0 3px currentColor);
+}
+
+.planet-link.is-aspect-linked text,
+.planet-link.is-aspect-linked .path-glyph {
+  fill: #ffe0a1;
+  stroke: #ffe0a1;
+}
+
+.aspect-grid-wrap {
+  overflow-x: auto;
+}
+
+.aspect-grid {
+  width: 100%;
+  min-width: 300px;
+  table-layout: fixed;
+}
+
+.aspect-grid th,
+.aspect-grid td {
+  min-width: 22px;
+  padding: 3px 1px;
+  text-align: center;
+}
+
+.aspect-grid th {
+  overflow: hidden;
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.aspect-grid td.aspect-link {
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.aspect-grid-empty {
+  background: rgba(255, 255, 255, 0.012);
+}
+
+.aspect-orb-settings {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.aspect-orb-settings legend,
+.aspect-orb-settings p {
+  grid-column: 1 / -1;
+}
+
+.aspect-orb-settings p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.aspect-orb-settings label {
+  grid-template-columns: minmax(0, 1fr) 52px auto !important;
+  align-items: center;
+}
+
+.aspect-orb-settings input {
+  width: 52px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: #0b1219;
+}
+
+.chart-wheel text,
+.bazi-columns text {
+  fill: #b5aa97;
+  font-family: "Songti SC", serif;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.chart-wheel .sign-glyph {
+  fill: #d0aa62;
+  font-size: 16px;
+}
+
+.chart-wheel .house-label,
+.chart-wheel .degree-label,
+.chart-wheel .wheel-caption {
+  fill: #777a77;
+  font-family: "PingFang SC", sans-serif;
+  font-size: 8px;
+}
+
+.chart-wheel .planet-glyph {
+  fill: #ddd0b7;
+  font-size: 17px;
+}
+
+.chart-wheel .wheel-center {
+  fill: #bd5a4d;
+  font-size: 18px;
+}
+
+.chart-wheel .axis line {
+  stroke: rgba(195, 77, 63, 0.68);
+  stroke-width: 1;
+}
+
+.chart-link {
+  cursor: pointer;
+  transition: opacity 120ms ease;
+}
+
+.chart-link:hover text,
+.chart-link.is-linked text,
+.chart-link.is-hovered text,
+.chart-link:focus text {
+  fill: #ffd68a;
+}
+
+.chart-link.is-linked line,
+.planet-link.is-linked line {
+  stroke: #d45b4c;
+  stroke-width: 2;
+}
+
+.zhengyu-wheel .mansion-segment text {
+  fill: #b76558;
+  font-size: 9px;
+}
+
+.zhengyu-wheel .palace-segment text {
+  fill: #a9936b;
+  font-size: 9px;
+}
+
+.chart-table-wrap {
+  overflow-x: auto;
+}
+
+.chart-table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #a9aca9;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.chart-table-wrap th,
+.chart-table-wrap td {
+  padding: 6px 7px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+  text-align: center;
+}
+
+.chart-table-wrap th {
+  color: #746b5c;
+  font-weight: 400;
+}
+
+.chart-table-wrap tr.chart-link:hover,
+.chart-table-wrap tr.is-linked,
+.chart-table-wrap tr.is-aspect-linked {
+  color: #f0ca7c;
+  background: rgba(189, 75, 62, 0.1);
+}
+
+.rule-table td.rule-condition {
+  min-width: 150px;
+  max-width: 260px;
+  white-space: normal;
+  text-align: left;
+}
+
+.rule-table .rule-pending {
+  color: #707579;
+}
+
+.bazi-columns {
+  display: block;
+  width: min(100%, 440px);
+  margin: 4px auto 0;
+}
+
+.bazi-columns rect {
+  stroke: rgba(202, 164, 93, 0.42);
+}
+
+.bazi-columns .pillar-title,
+.bazi-columns .wheel-caption {
+  fill: #817664;
+  font-size: 10px;
+}
+
+.bazi-columns .stem,
+.bazi-columns .branch {
+  fill: #e3c887;
+  font-size: 28px;
+}
+
+.bazi-columns .branch {
+  fill: #c66a58;
+}
+
+.bazi-relation-wrap {
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.bazi-relation-diagram {
+  display: block;
+  width: 100%;
+  min-width: 320px;
+  background: rgba(5, 10, 15, 0.42);
+}
+
+.diagram-pillar text,
+.relation-link text {
+  text-anchor: middle;
+}
+
+.diagram-title {
+  fill: #817664;
+  font-size: 10px;
+}
+
+.diagram-character {
+  fill: #e3c887;
+  font-family: "Songti SC", serif;
+  font-size: 24px;
+}
+
+.diagram-branch {
+  fill: #c66a58;
+}
+
+.relation-link {
+  --relation-color: #8b969d;
+  cursor: pointer;
+}
+
+.relation-link line,
+.relation-link circle {
+  stroke: var(--relation-color);
+  stroke-width: 1;
+}
+
+.relation-link circle {
+  fill: #0b1218;
+}
+
+.relation-link > text {
+  fill: var(--relation-color);
+  font-size: 9px;
+}
+
+.relation-link .relation-node {
+  fill: #ddd0b4;
+  font-size: 11px;
+}
+
+.relation-type-combine { --relation-color: #b89b5e; }
+.relation-type-clash { --relation-color: #bd635a; }
+.relation-type-punish { --relation-color: #8f72ae; }
+.relation-type-harm { --relation-color: #638ca8; }
+.relation-type-break { --relation-color: #a66f86; }
+.relation-type-overcome { --relation-color: #b77b50; }
+.relation-type-meeting { --relation-color: #5f9b83; }
+.relation-type-other { --relation-color: #8b969d; }
+
+.relation-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  padding: 7px;
+  color: #80878a;
+  font-size: 9px;
+}
+
+.relation-legend span {
+  color: var(--relation-color);
+}
+
+.relation-legend i {
+  display: inline-block;
+  width: 12px;
+  margin-right: 4px;
+  border-top: 1px solid currentColor;
+  vertical-align: middle;
+}
+
+.pillar-link.is-rule-linked text,
+td.is-rule-linked,
+.relation-link.is-rule-linked text {
+  fill: #fff0c7;
+  color: #fff0c7;
+}
+
+.relation-link.is-rule-linked line,
+.relation-link.is-rule-linked circle {
+  stroke: #fff0c7;
+  stroke-width: 2;
+}
+
+.luck-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(210, 175, 107, 0.12);
+}
+
+.luck-strip span {
+  display: grid;
+  gap: 2px;
+  padding: 8px;
+  background: #0a1017;
+  text-align: center;
+}
+
+.luck-strip strong {
+  color: #d4b572;
+  font-family: "Songti SC", serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.luck-strip small {
+  color: #696f72;
+  font-size: 8px;
+}
+
+.jieqi-context {
+  display: grid;
+  grid-template-columns: 1fr 28px 1fr;
+  align-items: center;
+  color: #6e7476;
+  font-size: 9px;
+  text-align: center;
+}
+
+.jieqi-context span,
+.jieqi-context time,
+.jieqi-context strong {
+  display: block;
+}
+
+.jieqi-context strong {
+  margin: 4px 0;
+  color: #d0aa62;
+  font-family: "Songti SC", serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.jieqi-context i {
+  height: 1px;
+  background: #a3453a;
+}
+
+.astronomy-note,
+.chart-error {
+  padding: 9px 11px;
+  border-left: 1px solid var(--cinnabar);
+  color: #8c8d88;
+  background: rgba(189, 75, 62, 0.07);
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.chart-placeholder {
+  display: flex;
+  height: calc(100% - 48px);
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 42px;
+  text-align: center;
+}
+
+.chart-placeholder h2 {
+  margin: 23px 0 7px;
+  color: #d9c9ac;
+  font-family: "Songti SC", serif;
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+}
+
+.chart-placeholder p {
+  max-width: 280px;
+  margin: 0;
+  color: #626b72;
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+.chart-placeholder small {
+  margin-top: 22px;
+  color: #474e54;
+  font-size: 8px;
+  letter-spacing: 0.16em;
+}
+
+.empty-wheel {
+  position: relative;
+  width: min(31vw, 330px);
+  aspect-ratio: 1;
+  margin-top: 22px;
+  border: 1px solid rgba(209, 172, 101, 0.3);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 22px rgba(6, 10, 15, 0.7),
+    inset 0 0 0 23px rgba(191, 77, 62, 0.22),
+    inset 0 0 0 63px rgba(6, 10, 15, 0.5),
+    inset 0 0 0 64px rgba(209, 172, 101, 0.2);
+  opacity: 0.78;
+}
+
+.empty-wheel::before,
+.empty-wheel::after {
+  position: absolute;
+  inset: 24%;
+  border: 1px solid rgba(201, 163, 92, 0.18);
+  border-radius: 50%;
+  content: "";
+}
+
+.empty-wheel::after {
+  inset: 43%;
+  border-color: rgba(190, 76, 61, 0.4);
+}
+
+.empty-wheel i {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    transparent 15%,
+    rgba(208, 174, 106, 0.18) 15%,
+    rgba(208, 174, 106, 0.18) 85%,
+    transparent 85%
+  );
+}
+
+.empty-wheel i:nth-of-type(2) {
+  transform: rotate(30deg);
+}
+
+.empty-wheel i:nth-of-type(3) {
+  transform: rotate(60deg);
+}
+
+.empty-wheel i:nth-of-type(4) {
+  transform: rotate(90deg);
+}
+
+.empty-wheel i:nth-of-type(5) {
+  transform: rotate(120deg);
+}
+
+.empty-wheel i:nth-of-type(6) {
+  transform: rotate(150deg);
+}
+
+.wheel-earth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  color: #ad5147;
+  font-family: "Songti SC", serif;
+  font-size: 19px;
+  transform: translate(-50%, -54%);
+}
+
+.chart-panel.is-collapsed {
+  width: 34px;
+  min-width: 34px;
+}
+
+.chart-panel.is-collapsed .chart-tabs,
+.chart-panel.is-collapsed .chart-inputs,
+.chart-panel.is-collapsed .chart-content {
+  visibility: hidden;
+}
+
+.workspace.is-chart-collapsed {
+  grid-template-columns: minmax(0, 1fr) 0 34px;
+}
+
+.workspace.is-chart-collapsed .workspace-splitter {
+  display: none;
+}
+
+.about-dialog {
+  width: min(560px, calc(100vw - 32px));
+  padding: 0;
+  border: 1px solid rgba(211, 171, 97, 0.35);
+  color: #c5c0b7;
+  background: #0a1017;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.72);
+}
+
+.about-dialog::backdrop {
+  background: rgba(1, 4, 8, 0.78);
+  backdrop-filter: blur(5px);
+}
+
+.dialog-frame {
+  position: relative;
+  padding: 34px 38px;
+}
+
+.dialog-close {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  color: #747b80;
+  background: transparent;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.about-dialog h2 {
+  margin: 9px 0 15px;
+  color: #e6d7bd;
+  font-family: "Songti SC", serif;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+}
+
+.about-dialog p {
+  color: #899198;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.about-dialog ul {
+  margin: 20px 0 0;
+  padding: 15px 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.about-dialog li {
+  margin: 7px 0;
+  color: #a8a9a5;
+  font-size: 10px;
+}
+
+.about-dialog li::before {
+  margin-right: 8px;
+  color: var(--cinnabar);
+  content: "◆";
+  font-size: 6px;
+}
+
+.fatal-error {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-content: center;
+  padding: 30px;
+  color: #a8a29a;
+  background: #05080d;
+  text-align: center;
+}
+
+.fatal-error span {
+  color: var(--cinnabar);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+}
+
+.fatal-error h1 {
+  color: #e6d6bd;
+  font-family: "Songti SC", serif;
+  font-weight: 400;
+}
+
+/* Phase 7 fixed docks: the viewport owns four non-overlapping control regions. */
+.dock-panel {
+  border: 1px solid var(--line);
+  background: rgba(6, 11, 17, 0.9);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(8px);
+}
+
+.view-dock {
+  position: absolute;
+  z-index: 18;
+  top: 24px;
+  left: 24px;
+  width: 172px;
+  max-height: calc(100% - 300px);
+  overflow: hidden;
+}
+
+.view-dock + .range-dock,
+.range-dock,
+.info-panel,
+.planetarium-toolbar {
+  pointer-events: auto;
+}
+
+.dock-heading {
+  display: flex;
+  width: 100%;
+  height: 30px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 9px;
+  color: #d8c390;
+  background: rgba(15, 23, 31, 0.94);
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.dock-heading i {
+  color: #81755f;
+  font-style: normal;
+}
+
+.view-dock-body {
+  max-height: calc(100vh - 400px);
+  padding: 6px;
+  overflow-y: auto;
+}
+
+.view-dock.is-collapsed .view-dock-body {
+  display: none;
+}
+
+.view-dock .view-presets,
+.view-dock .sphere-controls {
+  position: static;
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.view-dock .view-presets button {
+  width: 100%;
+}
+
+.view-dock .sphere-controls {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 7px;
+}
+
+.view-dock .sphere-controls label {
+  justify-content: space-between;
+}
+
+.sky-viewport[data-sky-mode="xuanye"] .view-presets {
+  display: grid;
+}
+
+.sky-viewport[data-sky-mode="huntian"] .view-presets,
+.sky-viewport[data-sky-mode="gaitian"] .view-presets {
+  display: none;
+}
+
+.range-dock {
+  position: absolute;
+  z-index: 20;
+  bottom: 16px;
+  left: 16px;
+  width: 108px;
+  max-height: calc(100% - 72px);
+  overflow: hidden;
+}
+
+.range-dock.is-open {
+  width: 270px;
+  overflow-y: auto;
+}
+
+.range-dock-toggle {
+  width: 100%;
+  height: 30px;
+  color: #d8c390;
+  background: rgba(15, 23, 31, 0.94);
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.range-dock-body {
+  display: none;
+  padding: 5px;
+}
+
+.range-dock.is-open .range-dock-body {
+  display: block;
+}
+
+.range-dock .visibility-controls.is-compact {
+  position: static;
+  width: 100%;
+  padding: 6px;
+  border: 0;
+  background: transparent;
+}
+
+.planetarium-toolbar,
+.scene-host.is-planetarium .planetarium-toolbar,
+.sky-viewport[data-sky-mode="huntian"] .planetarium-toolbar {
+  position: absolute;
+  z-index: 19;
+  right: 296px;
+  bottom: 16px;
+  left: 296px;
+  display: flex;
+  min-width: 0;
+  max-width: none;
+  align-items: center;
+  gap: 3px;
+  overflow-x: auto;
+  transform: none;
+}
+
+.planetarium-time {
+  position: absolute;
+  z-index: 19;
+  right: max(296px, calc(50% - 245px));
+  bottom: 54px;
+  left: max(296px, calc(50% - 245px));
+  display: flex;
+  min-width: 0;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 3px 7px;
+}
+
+.planetarium-time button {
+  min-width: 28px;
+  height: 25px;
+  color: #c7b789;
+  background: rgba(16, 25, 34, 0.92);
+  font-size: 10px;
+}
+
+.planetarium-time output {
+  min-width: 132px;
+  overflow: hidden;
+  color: #aeb8bc;
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.auto-hide-sky-ui,
+.planetarium-toolbar {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+
+.auto-hide-sky-ui.is-revealed,
+.planetarium-toolbar.is-revealed {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.sky-search {
+  position: absolute;
+  z-index: 24;
+  top: 20px;
+  left: 50%;
+  display: none;
+  width: min(390px, calc(100% - 440px));
+  transform: translateX(-50%);
+}
+
+.sky-search.is-open {
+  display: block;
+}
+
+.sky-search input {
+  width: 100%;
+  height: 34px;
+  padding: 0 11px;
+  color: #e9dfc9;
+  background: rgba(8, 14, 21, 0.97);
+}
+
+.sky-search-results {
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.sky-search-results button {
+  display: block;
+  width: 100%;
+  padding: 7px 10px;
+  color: #c8c4b9;
+  background: rgba(8, 14, 21, 0.97);
+  text-align: left;
+}
+
+.dso-labels {
+  position: absolute;
+  z-index: 8;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.dso-labels span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgba(155, 185, 207, 0.76);
+  font-size: 9px;
+  transition: opacity 180ms ease;
+}
+
+.bortle-setting {
+  display: grid !important;
+  grid-template-columns: auto 1fr;
+  gap: 6px 10px;
+}
+
+.bortle-setting input {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.bortle-readout {
+  overflow: hidden;
+  color: #aa9c7d;
+  font-size: 10px;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.planetarium-toolbar .dock-title {
+  padding: 0 5px;
+  color: #8e8065;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.planetarium-toolbar [data-inner-only] {
+  display: none;
+}
+
+.planetarium-toolbar.is-inner [data-inner-only] {
+  display: flex;
+}
+
+.info-panel {
+  top: auto;
+  right: 16px;
+  bottom: 16px;
+  width: 270px;
+  max-height: min(48%, 390px);
+  overflow-y: auto;
+}
+
+.scene-readout,
+.control-hint {
+  display: none;
+}
+
+.time-bar .about-button {
+  position: static;
+  z-index: auto;
+  flex: 0 0 auto;
+  height: 31px;
+}
+
+.viewport-heading {
+  left: 218px;
+}
+
+.chart-panel {
+  display: grid;
+  grid-template-rows: 48px auto minmax(0, 1fr);
+}
+
+.chart-inputs {
+  display: flex;
+  height: auto;
+  min-height: 42px;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: flex-start;
+  gap: 6px 9px;
+  padding: 7px 12px 7px 32px;
+}
+
+.chart-inputs[hidden],
+.toolbar-group[hidden],
+.chart-text-toggle[hidden] {
+  display: none;
+}
+
+.toolbar-group {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.zhengyu-controls {
+  width: 100%;
+}
+
+.zhengyu-controls label {
+  flex: 1 1 135px;
+}
+
+.zhengyu-controls select {
+  width: 0;
+  min-width: 0;
+  max-width: 155px;
+  flex: 1 1 auto;
+}
+
+.shared-chart-controls {
+  margin-left: auto;
+}
+
+.context-visibility-toggle,
+.return-chart-orientation {
+  position: static;
+}
+
+.context-visibility-toggle {
+  color: #9ba2a2;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.return-chart-orientation,
+.virtual-radius-toggle {
+  height: 26px;
+  padding: 0 8px;
+  border: 1px solid rgba(213, 187, 135, 0.18);
+  color: #a99772;
+  background: transparent;
+  font-size: 9px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.return-chart-orientation:disabled,
+.virtual-radius-toggle:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.chart-content {
+  height: auto;
+  min-height: 0;
+}
+
+.chart-table-section {
+  margin-top: 20px;
+}
+
+.chart-table-section summary {
+  padding: 0 0 6px;
+  border-bottom: 1px solid rgba(207, 172, 102, 0.16);
+  color: #c7a86c;
+  font-family: "Songti SC", serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+}
+
+.chart-table-section > :not(summary) {
+  margin-top: 8px;
+}
+
+@media (max-width: 1120px) {
+  .time-bar {
+    gap: 12px;
+  }
+
+  .brand-lockup {
+    min-width: 136px;
+  }
+
+  .place-field {
+    display: none !important;
+  }
+
+  .time-zone {
+    width: 126px;
+  }
+}
+
+@media (max-width: 820px) {
+  html,
+  body,
+  #app,
+  .app-shell {
+    height: auto;
+    min-height: 100%;
+    overflow: auto;
+  }
+
+  .app-shell {
+    grid-template-rows: auto auto;
+  }
+
+  .time-bar {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 10px 12px;
+  }
+
+  .time-controls {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 3px;
+  }
+
+  .brand-lockup {
+    width: 100%;
+  }
+
+  .workspace,
+  .workspace.is-chart-collapsed {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+  }
+
+  .workspace-splitter {
+    display: none;
+  }
+
+  .sky-viewport {
+    height: 68vh;
+    min-height: 520px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .chart-panel,
+  .chart-panel.is-collapsed {
+    width: 100%;
+    min-width: 100%;
+    height: 620px;
+  }
+
+  .chart-panel.is-collapsed {
+    height: 48px;
+  }
+
+  .collapse-chart {
+    top: 1px;
+  }
+
+  .info-panel {
+    top: auto;
+    right: 18px;
+    bottom: 58px;
+    width: min(330px, calc(100vw - 36px));
+  }
+
+  .view-dock {
+    top: 18px;
+    left: 18px;
+  }
+
+  .viewport-heading {
+    display: none;
+  }
+
+  .planetarium-toolbar,
+  .scene-host.is-planetarium .planetarium-toolbar,
+  .sky-viewport[data-sky-mode="huntian"] .planetarium-toolbar {
+    right: 18px;
+    left: 132px;
+  }
+
+  .range-dock.is-open ~ .planetarium-toolbar {
+    left: 288px;
+  }
+
+  .empty-wheel {
+    width: min(74vw, 330px);
+  }
+}
