@@ -1,2 +1,0 @@
-- Venus surface map by Praesepe (http://www.celestiamotherlode.net/catalog/venus.html) under CC-BY-NC.
-- Venus cloud map adapted from original by NASA/JPL/Seal (http://www.celestiamotherlode.net/catalog/venus.html) under CC-BY-NC.
