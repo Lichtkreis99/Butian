@@ -1,0 +1,18 @@
+{
+  "_three-vendor-Dr7LgqDL.js": {
+    "file": "assets/three-vendor-Dr7LgqDL.js",
+    "name": "three-vendor"
+  },
+  "index.html": {
+    "file": "assets/index-BX3TLHgy.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "imports": [
+      "_three-vendor-Dr7LgqDL.js"
+    ],
+    "css": [
+      "assets/index-c8SCAjAl.css"
+    ]
+  }
+}

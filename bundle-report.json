@@ -1,0 +1,847 @@
+{
+  "generatedBy": "verify-bundle-budget",
+  "firstScreenBytes": 3327840,
+  "totalBytes": 11361106,
+  "files": [
+    {
+      "file": ".vite/manifest.json",
+      "bytes": 355,
+      "gzip": 189,
+      "tier": "build"
+    },
+    {
+      "file": "assets/asset-manifest.json",
+      "bytes": 19845,
+      "gzip": 1631,
+      "tier": "build"
+    },
+    {
+      "file": "assets/constellation-art/CON western And.webp",
+      "bytes": 12130,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Ant.webp",
+      "bytes": 2052,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Aps.webp",
+      "bytes": 4422,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Aql.webp",
+      "bytes": 12380,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Aqr.webp",
+      "bytes": 17246,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Ara.webp",
+      "bytes": 6422,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Ari.webp",
+      "bytes": 5584,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Aur.webp",
+      "bytes": 24574,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Boo.webp",
+      "bytes": 14034,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Cae.webp",
+      "bytes": 2590,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Cam.webp",
+      "bytes": 2644,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Cap.webp",
+      "bytes": 15236,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Car.webp",
+      "bytes": 20500,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Cas.webp",
+      "bytes": 17644,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Cep.webp",
+      "bytes": 15522,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Cet.webp",
+      "bytes": 12440,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Cha.webp",
+      "bytes": 4086,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Cir.webp",
+      "bytes": 2780,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western CMa.webp",
+      "bytes": 9070,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western CMi.webp",
+      "bytes": 3708,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Cnc.webp",
+      "bytes": 4810,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Col.webp",
+      "bytes": 4676,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Com.webp",
+      "bytes": 6470,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western CrA.webp",
+      "bytes": 6128,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western CrB.webp",
+      "bytes": 6600,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Crt.webp",
+      "bytes": 6674,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Cru.webp",
+      "bytes": 2766,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Crv.webp",
+      "bytes": 5308,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Cvn.webp",
+      "bytes": 4426,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Cyg.webp",
+      "bytes": 10172,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Del.webp",
+      "bytes": 3028,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Dor.webp",
+      "bytes": 4194,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Dra.webp",
+      "bytes": 14280,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Equ.webp",
+      "bytes": 5280,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Eri.webp",
+      "bytes": 7660,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western For.webp",
+      "bytes": 4984,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Gem.webp",
+      "bytes": 8074,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Gru.webp",
+      "bytes": 4928,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Her.webp",
+      "bytes": 16690,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Hya.webp",
+      "bytes": 4480,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Hyi.webp",
+      "bytes": 2914,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Ind.webp",
+      "bytes": 6192,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Lac.webp",
+      "bytes": 4208,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Leo.webp",
+      "bytes": 11516,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Lep.webp",
+      "bytes": 4418,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Lib.webp",
+      "bytes": 4484,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western LMi.webp",
+      "bytes": 3658,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Lup.webp",
+      "bytes": 7868,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Lyn.webp",
+      "bytes": 7536,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Lyr.webp",
+      "bytes": 4528,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Men.webp",
+      "bytes": 5986,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Mic.webp",
+      "bytes": 4374,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Mon.webp",
+      "bytes": 10996,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Mus.webp",
+      "bytes": 6570,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Nor.webp",
+      "bytes": 1450,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Oct.webp",
+      "bytes": 6954,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Oph.webp",
+      "bytes": 12846,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Ori.webp",
+      "bytes": 17810,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Pav.webp",
+      "bytes": 10012,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Peg.webp",
+      "bytes": 11288,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Per.webp",
+      "bytes": 19620,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Phe.webp",
+      "bytes": 7424,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Pic.webp",
+      "bytes": 5628,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western PsA.webp",
+      "bytes": 4798,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Psc.webp",
+      "bytes": 9384,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Pyx.webp",
+      "bytes": 7064,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Ret.webp",
+      "bytes": 1946,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Scl.webp",
+      "bytes": 5544,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Sco.webp",
+      "bytes": 14616,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Sct.webp",
+      "bytes": 9644,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Sex.webp",
+      "bytes": 2872,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Sge.webp",
+      "bytes": 1612,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Sgr.webp",
+      "bytes": 10842,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Tau.webp",
+      "bytes": 9286,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Tel.webp",
+      "bytes": 1568,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Tra.webp",
+      "bytes": 920,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Tri.webp",
+      "bytes": 832,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Tuc.webp",
+      "bytes": 2686,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western UMa.webp",
+      "bytes": 9010,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western UMi.webp",
+      "bytes": 2298,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Vol.webp",
+      "bytes": 2550,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/constellation-art/CON western Vul.webp",
+      "bytes": 4026,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/data/constellation-art.json",
+      "bytes": 33284,
+      "gzip": 8017,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/data/landscape-guereins.json",
+      "bytes": 181,
+      "gzip": 158,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/data/skyculture-chinese.json",
+      "bytes": 213291,
+      "gzip": 41933,
+      "tier": "core"
+    },
+    {
+      "file": "assets/data/skyculture-western.json",
+      "bytes": 14963,
+      "gzip": 4729,
+      "tier": "core"
+    },
+    {
+      "file": "assets/data/stars-core.bin",
+      "bytes": 775488,
+      "gzip": null,
+      "tier": "core"
+    },
+    {
+      "file": "assets/data/stars-core.json",
+      "bytes": 124113,
+      "gzip": 41444,
+      "tier": "core"
+    },
+    {
+      "file": "assets/data/stars-deferred.bin",
+      "bytes": 2829764,
+      "gzip": null,
+      "tier": "deferred"
+    },
+    {
+      "file": "assets/data/stars-deferred.json",
+      "bytes": 56060,
+      "gzip": 19638,
+      "tier": "deferred"
+    },
+    {
+      "file": "assets/data/stellarium-dso.json.gz",
+      "bytes": 336692,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/data/stellarium-milkyway.json",
+      "bytes": 436,
+      "gzip": 151,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/data/textures.json",
+      "bytes": 1315,
+      "gzip": 269,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/index-BX3TLHgy.js",
+      "bytes": 1501639,
+      "gzip": 467394,
+      "tier": "core"
+    },
+    {
+      "file": "assets/index-c8SCAjAl.css",
+      "bytes": 122275,
+      "gzip": 24258,
+      "tier": "core"
+    },
+    {
+      "file": "assets/landscape-guereins/guereins-4096x1024.webp",
+      "bytes": 703892,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/milky-way/0.webp",
+      "bytes": 9432,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/milky-way/1.webp",
+      "bytes": 2460,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/milky-way/10.webp",
+      "bytes": 19844,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/milky-way/11.webp",
+      "bytes": 5726,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/milky-way/2.webp",
+      "bytes": 1156,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/milky-way/3.webp",
+      "bytes": 15450,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/milky-way/4.webp",
+      "bytes": 1106,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/milky-way/5.webp",
+      "bytes": 11306,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/milky-way/6.webp",
+      "bytes": 1246,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/milky-way/7.webp",
+      "bytes": 14522,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/milky-way/8.webp",
+      "bytes": 1788,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/milky-way/9.webp",
+      "bytes": 17522,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthCloudBk.jpg",
+      "bytes": 337040,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthCloudDn.jpg",
+      "bytes": 352424,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthCloudFt.jpg",
+      "bytes": 295198,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthCloudLf.jpg",
+      "bytes": 326924,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthCloudRt.jpg",
+      "bytes": 327514,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthCloudUp.jpg",
+      "bytes": 346020,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthDayBk.jpg",
+      "bytes": 37871,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthDayDn.jpg",
+      "bytes": 43494,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthDayFt.jpg",
+      "bytes": 87787,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthDayLf.jpg",
+      "bytes": 71311,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthDayRt.jpg",
+      "bytes": 98417,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthDayUp.jpg",
+      "bytes": 135768,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthNightBk.jpg",
+      "bytes": 4730,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthNightDn.jpg",
+      "bytes": 3824,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthNightFt.jpg",
+      "bytes": 15487,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthNightLf.jpg",
+      "bytes": 18914,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthNightRt.jpg",
+      "bytes": 18231,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/EarthNightUp.jpg",
+      "bytes": 25253,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/Jupiter.jpg",
+      "bytes": 48830,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/Mars.jpg",
+      "bytes": 36265,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/Mercury.jpg",
+      "bytes": 151900,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/Moon.jpg",
+      "bytes": 192390,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/Neptune.jpg",
+      "bytes": 48069,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/Pluto.jpg",
+      "bytes": 114814,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/Saturn.jpg",
+      "bytes": 85809,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/SaturnRing.png",
+      "bytes": 5696,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/Uranus.jpg",
+      "bytes": 10135,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/textures/Venus.jpg",
+      "bytes": 93299,
+      "gzip": null,
+      "tier": "on-demand"
+    },
+    {
+      "file": "assets/three-vendor-Dr7LgqDL.js",
+      "bytes": 574529,
+      "gzip": 141235,
+      "tier": "core"
+    },
+    {
+      "file": "index.html",
+      "bytes": 1542,
+      "gzip": 887,
+      "tier": "core"
+    }
+  ]
+}
