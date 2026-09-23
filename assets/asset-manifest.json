@@ -806,6 +806,18 @@
       "bytes": 93299,
       "tier": "on-demand",
       "item": "行星贴图"
+    },
+    {
+      "file": "NotoSansSC-subset.woff2",
+      "bytes": 655296,
+      "tier": "deferred",
+      "item": "自托管中文字体"
+    },
+    {
+      "file": "NotoSerifSC-subset.woff2",
+      "bytes": 1523200,
+      "tier": "deferred",
+      "item": "自托管中文字体"
     }
   ]
 }

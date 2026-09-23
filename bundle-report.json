@@ -1,7 +1,7 @@
 {
   "generatedBy": "verify-bundle-budget",
-  "firstScreenBytes": 3394359,
-  "totalBytes": 11427625,
+  "firstScreenBytes": 3400859,
+  "totalBytes": 13612905,
   "files": [
     {
       "file": ".vite/manifest.json",
@@ -11,8 +11,8 @@
     },
     {
       "file": "assets/asset-manifest.json",
-      "bytes": 19845,
-      "gzip": 1631,
+      "bytes": 20129,
+      "gzip": 1702,
       "tier": "build"
     },
     {
@@ -574,15 +574,15 @@
       "tier": "on-demand"
     },
     {
-      "file": "assets/index-BytUaE_P.js",
-      "bytes": 1556338,
-      "gzip": 482493,
+      "file": "assets/index-0KIQ4vZh.js",
+      "bytes": 1562457,
+      "gzip": 484067,
       "tier": "core"
     },
     {
-      "file": "assets/index-C8h4Qh3i.css",
-      "bytes": 134081,
-      "gzip": 26354,
+      "file": "assets/index-DxHcFTPV.css",
+      "bytes": 134462,
+      "gzip": 26497,
       "tier": "core"
     },
     {
@@ -840,8 +840,20 @@
     {
       "file": "index.html",
       "bytes": 1547,
-      "gzip": 891,
+      "gzip": 892,
       "tier": "core"
+    },
+    {
+      "file": "NotoSansSC-subset.woff2",
+      "bytes": 655296,
+      "gzip": null,
+      "tier": "deferred"
+    },
+    {
+      "file": "NotoSerifSC-subset.woff2",
+      "bytes": 1523200,
+      "gzip": null,
+      "tier": "deferred"
     }
   ]
 }
