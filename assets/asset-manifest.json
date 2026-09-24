@@ -808,6 +808,12 @@
       "item": "行星贴图"
     },
     {
+      "file": "LXGWWenKai-subset.woff2",
+      "bytes": 953796,
+      "tier": "deferred",
+      "item": "自托管中文字体"
+    },
+    {
       "file": "NotoSansSC-subset.woff2",
       "bytes": 655296,
       "tier": "deferred",

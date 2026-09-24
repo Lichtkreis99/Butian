@@ -1,18 +1,18 @@
 {
   "generatedBy": "verify-bundle-budget",
-  "firstScreenBytes": 3400859,
-  "totalBytes": 13612905,
+  "firstScreenBytes": 3402758,
+  "totalBytes": 14568741,
   "files": [
     {
       "file": ".vite/manifest.json",
       "bytes": 355,
-      "gzip": 189,
+      "gzip": 186,
       "tier": "build"
     },
     {
       "file": "assets/asset-manifest.json",
-      "bytes": 20129,
-      "gzip": 1702,
+      "bytes": 20270,
+      "gzip": 1719,
       "tier": "build"
     },
     {
@@ -574,15 +574,15 @@
       "tier": "on-demand"
     },
     {
-      "file": "assets/index-0KIQ4vZh.js",
-      "bytes": 1562457,
-      "gzip": 484067,
+      "file": "assets/index-BqZvVsBb.js",
+      "bytes": 1564251,
+      "gzip": 484560,
       "tier": "core"
     },
     {
-      "file": "assets/index-DxHcFTPV.css",
-      "bytes": 134462,
-      "gzip": 26497,
+      "file": "assets/index-DUYrDe2k.css",
+      "bytes": 134567,
+      "gzip": 26509,
       "tier": "core"
     },
     {
@@ -840,8 +840,14 @@
     {
       "file": "index.html",
       "bytes": 1547,
-      "gzip": 892,
+      "gzip": 890,
       "tier": "core"
+    },
+    {
+      "file": "LXGWWenKai-subset.woff2",
+      "bytes": 953796,
+      "gzip": null,
+      "tier": "deferred"
     },
     {
       "file": "NotoSansSC-subset.woff2",
