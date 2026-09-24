@@ -1,12 +1,12 @@
 {
   "generatedBy": "verify-bundle-budget",
-  "firstScreenBytes": 3409345,
-  "totalBytes": 14575328,
+  "firstScreenBytes": 3422320,
+  "totalBytes": 14588303,
   "files": [
     {
       "file": ".vite/manifest.json",
       "bytes": 355,
-      "gzip": 185,
+      "gzip": 186,
       "tier": "build"
     },
     {
@@ -574,15 +574,15 @@
       "tier": "on-demand"
     },
     {
-      "file": "assets/index-Dl9aXAEl.js",
-      "bytes": 1570709,
-      "gzip": 486425,
+      "file": "assets/index-BjHGm1By.css",
+      "bytes": 138120,
+      "gzip": 27119,
       "tier": "core"
     },
     {
-      "file": "assets/index-WFhGHpAc.css",
-      "bytes": 134696,
-      "gzip": 26546,
+      "file": "assets/index-DKhjIUnD.js",
+      "bytes": 1580260,
+      "gzip": 489523,
       "tier": "core"
     },
     {
@@ -840,7 +840,7 @@
     {
       "file": "index.html",
       "bytes": 1547,
-      "gzip": 890,
+      "gzip": 891,
       "tier": "core"
     },
     {
