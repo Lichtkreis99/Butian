@@ -814,6 +814,12 @@
       "item": "自托管中文字体"
     },
     {
+      "file": "MaShanZheng-subset.woff2",
+      "bytes": 206644,
+      "tier": "deferred",
+      "item": "自托管中文字体"
+    },
+    {
       "file": "NotoSansSC-subset.woff2",
       "bytes": 655296,
       "tier": "deferred",

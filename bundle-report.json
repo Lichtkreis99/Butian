@@ -1,18 +1,18 @@
 {
   "generatedBy": "verify-bundle-budget",
-  "firstScreenBytes": 3479719,
-  "totalBytes": 14645702,
+  "firstScreenBytes": 3479970,
+  "totalBytes": 14852739,
   "files": [
     {
       "file": ".vite/manifest.json",
       "bytes": 355,
-      "gzip": 186,
+      "gzip": 189,
       "tier": "build"
     },
     {
       "file": "assets/asset-manifest.json",
-      "bytes": 20270,
-      "gzip": 1719,
+      "bytes": 20412,
+      "gzip": 1741,
       "tier": "build"
     },
     {
@@ -574,15 +574,15 @@
       "tier": "on-demand"
     },
     {
-      "file": "assets/index-CN0L_GCg.js",
-      "bytes": 1631630,
-      "gzip": 505413,
+      "file": "assets/index-6YGUF4KY.css",
+      "bytes": 144413,
+      "gzip": 28087,
       "tier": "core"
     },
     {
-      "file": "assets/index-CULHvHxZ.css",
-      "bytes": 144149,
-      "gzip": 28022,
+      "file": "assets/index-BPLsyKbd.js",
+      "bytes": 1631617,
+      "gzip": 505421,
       "tier": "core"
     },
     {
@@ -840,12 +840,18 @@
     {
       "file": "index.html",
       "bytes": 1547,
-      "gzip": 891,
+      "gzip": 892,
       "tier": "core"
     },
     {
       "file": "LXGWWenKai-subset.woff2",
       "bytes": 953796,
+      "gzip": null,
+      "tier": "deferred"
+    },
+    {
+      "file": "MaShanZheng-subset.woff2",
+      "bytes": 206644,
       "gzip": null,
       "tier": "deferred"
     },
