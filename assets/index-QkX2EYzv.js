@@ -1288,7 +1288,7 @@ import{$ as e,A as t,B as n,C as r,D as i,E as a,F as o,G as s,H as c,I as l,J a
           </div>
           <span class="epoch-status" role="status" aria-live="polite"></span>
         </div>
-        <label>时区<select class="time-zone">
+        <label class="time-zone-field">时区<select class="time-zone">
           <option value="Asia/Shanghai">中国标准时 · UTC+8</option>
           <option value="UTC">协调世界时 · UTC</option>
           <option value="Europe/Berlin">欧洲中部时间</option>
