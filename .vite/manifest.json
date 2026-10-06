@@ -4,7 +4,7 @@
     "name": "three-vendor"
   },
   "index.html": {
-    "file": "assets/index-CiD5pxsY.js",
+    "file": "assets/index-DYDGjXjk.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
@@ -12,7 +12,7 @@
       "_three-vendor-CeAHWIVY.js"
     ],
     "css": [
-      "assets/index-D_VR1TvI.css"
+      "assets/index-SR8e9fuB.css"
     ]
   }
 }
