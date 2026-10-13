@@ -1420,7 +1420,7 @@ import{$ as e,A as t,B as n,C as r,D as i,E as a,F as o,G as s,H as c,I as l,J a
             ${this.check(`milkyWay`,`银河`)}
             ${this.check(`deepSkyObjects`,`深空天体`)}
             ${this.check(`bloom`,`泛光`)}
-            <p class="setting-note">让亮星与行星带一圈柔光；会增加渲染开销</p>
+            <p class="setting-note">让亮星与行星带一圈柔光，属观感偏好，不是画质提升。本作品星点密集，开启后背景会整体抬亮、星官连线与宿名会变糊；辨读星官与宿度时建议关闭。也会增加渲染开销。</p>
             ${this.check(`schematicBodiesObservation`,`纯观星也显示示意天体`)}
             ${this.radialScale(`observation`)}
           </fieldset>
