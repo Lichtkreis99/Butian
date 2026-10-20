@@ -640,6 +640,30 @@
       "item": "银河贴图"
     },
     {
+      "file": "assets/planet-surfaces/mars.jpg",
+      "bytes": 750547,
+      "tier": "on-demand",
+      "item": "星球表面：Mars"
+    },
+    {
+      "file": "assets/planet-surfaces/mercury.jpg",
+      "bytes": 872555,
+      "tier": "on-demand",
+      "item": "星球表面：Mercury"
+    },
+    {
+      "file": "assets/planet-surfaces/moon.jpg",
+      "bytes": 1053869,
+      "tier": "on-demand",
+      "item": "星球表面：Moon"
+    },
+    {
+      "file": "assets/planet-surfaces/venus.jpg",
+      "bytes": 885075,
+      "tier": "on-demand",
+      "item": "星球表面：Venus"
+    },
+    {
       "file": "assets/textures/EarthCloudBk.jpg",
       "bytes": 337040,
       "tier": "on-demand",
