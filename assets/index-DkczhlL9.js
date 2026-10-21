@@ -94,7 +94,7 @@ import{$ as e,A as t,B as n,C as r,D as i,E as a,F as o,G as s,H as c,I as l,J a
       0.50572 * pow(altitudeDegrees + 6.07995, -1.6364);
     return min(40.0, 1.0 / denominator);
   }
-`;function im(e){if(e<=-1)return 40;let t=e*Math.PI/180,n=Math.sin(t)+.50572*(e+6.07995)**-1.6364;return Math.min(40,1/n)}function am(e,t=.2){return t*im(e)}function om(e){if(e.bortle>=9||e.sunAltitude>=0)return 0;let t=Math.max(0,(10-Qp(e.bortle))/9),n=e.atmosphere?Math.min(1,Math.max(0,(-e.sunAltitude-4)/14)):1,r=e.atmosphere?1-Math.min(.7,Math.max(0,e.moonAltitude+5)/100):1,i=Math.min(1,Math.max(.2,Math.sqrt(90/Math.max(10,e.fov))));return .34*t**1.7*n*r*i}function sm(e,t,n){return!Number.isFinite(e)||e<=0?t<=20:e<=em(t,n)+1.2&&t<=100}function cm(e,t,n){return n?Math.min(1,Math.max(0,(-e-4)/14))*(1-Math.min(.65,Math.max(0,t+5)/100)):1}var lm=`
+`;function im(e){if(e<=-1)return 40;let t=e*Math.PI/180,n=Math.sin(t)+.50572*(e+6.07995)**-1.6364;return Math.min(40,1/n)}function am(e,t=.2){return t*im(e)}function om(e){if(e.bortle>=9||e.sunAltitude>=0)return 0;let t=Math.max(0,(10-Qp(e.bortle))/9),n=e.atmosphere?Math.min(1,Math.max(0,(-e.sunAltitude-4)/14)):1,r=e.atmosphere?1-Math.min(.7,Math.max(0,e.moonAltitude+5)/100):1,i=Math.min(1,Math.max(.2,Math.sqrt(90/Math.max(10,e.fov))));return .5*t**1.7*n*r*i}function sm(e,t,n){return!Number.isFinite(e)||e<=0?t<=20:e<=em(t,n)+1.2&&t<=100}function cm(e,t,n){return n?Math.min(1,Math.max(0,(-e-4)/14))*(1-Math.min(.65,Math.max(0,t+5)/100)):1}var lm=`
   uniform float planetariumMode;
   uniform float planetariumProjection;
   uniform float planetariumFov;
