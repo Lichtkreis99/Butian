@@ -502,6 +502,12 @@
       "item": "星座星象索引"
     },
     {
+      "file": "assets/data/eso-milkyway.json",
+      "bytes": 2006,
+      "tier": "on-demand",
+      "item": "高清银河贴图索引"
+    },
+    {
       "file": "assets/data/landscape-guereins.json",
       "bytes": 181,
       "tier": "on-demand",
@@ -560,6 +566,294 @@
       "bytes": 1315,
       "tier": "on-demand",
       "item": "行星贴图索引"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix0.webp",
+      "bytes": 34670,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix1.webp",
+      "bytes": 58542,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix10.webp",
+      "bytes": 29722,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix11.webp",
+      "bytes": 43886,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix12.webp",
+      "bytes": 62092,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix13.webp",
+      "bytes": 71524,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix14.webp",
+      "bytes": 73640,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix15.webp",
+      "bytes": 64734,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix16.webp",
+      "bytes": 21218,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix17.webp",
+      "bytes": 23332,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix18.webp",
+      "bytes": 29646,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix19.webp",
+      "bytes": 35676,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix2.webp",
+      "bytes": 59946,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix20.webp",
+      "bytes": 65262,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix21.webp",
+      "bytes": 79478,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix22.webp",
+      "bytes": 51970,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix23.webp",
+      "bytes": 74056,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix24.webp",
+      "bytes": 45796,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix25.webp",
+      "bytes": 40844,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix26.webp",
+      "bytes": 38614,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix27.webp",
+      "bytes": 31240,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix28.webp",
+      "bytes": 67610,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix29.webp",
+      "bytes": 67148,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix3.webp",
+      "bytes": 69514,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix30.webp",
+      "bytes": 44640,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix31.webp",
+      "bytes": 61890,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix32.webp",
+      "bytes": 40678,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix33.webp",
+      "bytes": 43884,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix34.webp",
+      "bytes": 30696,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix35.webp",
+      "bytes": 45944,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix36.webp",
+      "bytes": 70984,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix37.webp",
+      "bytes": 66884,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix38.webp",
+      "bytes": 77304,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix39.webp",
+      "bytes": 64902,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix4.webp",
+      "bytes": 45844,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix40.webp",
+      "bytes": 75124,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix41.webp",
+      "bytes": 75748,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix42.webp",
+      "bytes": 66644,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix43.webp",
+      "bytes": 45970,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix44.webp",
+      "bytes": 43216,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix45.webp",
+      "bytes": 31796,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix46.webp",
+      "bytes": 58378,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix47.webp",
+      "bytes": 38618,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix5.webp",
+      "bytes": 35612,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix6.webp",
+      "bytes": 44856,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix7.webp",
+      "bytes": 36904,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix8.webp",
+      "bytes": 42694,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
+    },
+    {
+      "file": "assets/eso-milkyway/Npix9.webp",
+      "bytes": 40604,
+      "tier": "on-demand",
+      "item": "高清银河贴图"
     },
     {
       "file": "assets/landscape-guereins/guereins-4096x1024.webp",
