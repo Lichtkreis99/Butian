@@ -9,7 +9,7 @@
       content="步天：连接真实三维星空与中国天文盘面的离线天文可视化。"
     >
     <title>步天 · BuTian</title>
-    <script type="module" crossorigin src="./assets/index-BmSrDf0G.js"></script>
+    <script type="module" crossorigin src="./assets/index-vFcYe7mq.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/three-vendor-DYhrIBav.js">
     <link rel="stylesheet" crossorigin href="./assets/index-Drt6UX8q.css">
   <style>.web-splash{position:fixed;inset:0;display:grid;place-content:center;
@@ -17,6 +17,9 @@
           color:var(--base-text-secondary,#38342e);font:13px system-ui}
           .web-splash strong{font:24px var(--base-font,serif);
           color:var(--base-sky-title,#9e2b1f)}
+          .web-splash ul{margin:8px 0 0;padding:0;list-style:none;text-align:left;line-height:1.8}
+          .web-splash li{display:flex;gap:8px;align-items:center}
+          .web-splash li[hidden]{display:none}.web-splash i{width:1em;font-style:normal}
           .asset-progress{position:fixed;z-index:10000;right:16px;bottom:16px;width:220px;
           padding:8px 10px;border:1px solid var(--border-control,#1b1b18);
           background:var(--base-panel,#f2ede2);
@@ -26,6 +29,11 @@
   <body>
     <div id="app"><div class="web-splash" role="status">
           <span>步天 · BUTIAN</span><strong>正在展开星空</strong>
+          <ul aria-label="资源加载阶段">
+            <li data-stage="core"><i aria-hidden="true">○</i>核心星表</li>
+            <li data-stage="deferred"><i aria-hidden="true">○</i>其余恒星与字体</li>
+            <li data-stage="on-demand" hidden><i aria-hidden="true">○</i>按需图层</li>
+          </ul>
         </div></div><div class="asset-progress" role="status" hidden>
           <span>正在加载：核心星表</span><progress max="100" value="0"></progress>
         </div>
